@@ -1639,10 +1639,10 @@ def init(
         if description is not None:
             args["description"] = description
 
+        merged_git_metadata_settings = state.git_metadata_settings
         if repo_info:
             repo_info_arg = repo_info
         else:
-            merged_git_metadata_settings = state.git_metadata_settings
             if git_metadata_settings is not None:
                 merged_git_metadata_settings = GitMetadataSettings.merge(
                     merged_git_metadata_settings, git_metadata_settings
